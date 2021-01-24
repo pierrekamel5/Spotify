@@ -1,0 +1,33 @@
+
+<section>
+    <ul>
+        <li > 
+            <button pButton type="button" label="Back" icon="pi pi-arrow-left" 
+            class="p-button-secondary"  (click)="back()"   ></button>
+        </li>
+    </ul>
+
+    <div style="background-color: rgb(223, 223, 223);padding: 1rem;" >
+   
+        <p-card class="card"    header="{{artistAlbum.name}}"
+         [style]="{'width': '25rem','heigth':'3rem ' ,'margin-bottom': '2em','display': 'inline-block','margin-left':'2em'}"
+        *ngFor="let artistAlbum of ArtistAlbum"  > 
+            <ng-template pTemplate="header">
+                <img alt="Card" style="height: 22rem !important;"   [src]="[artistAlbum.images[0].url]" *ngIf="artistAlbum.images.length > 0" >
+                <img style="height: 22rem !important;" src="assets/images/Image-Not-Available.png" *ngIf="artistAlbum.images.length == 0">
+            </ng-template>
+            
+            <p style="font-weight: bolder;">Release Date:
+                 <span style="font-weight:500;">{{artistAlbum.release_date}}</span> 
+            </p>
+            
+            <p style="font-weight: bolder;">Total Tracks: 
+                <span style="font-weight:500;">{{artistAlbum.total_tracks}}</span>
+            </p>    
+    
+            <a href="{{artistAlbum.external_urls.spotify}}" style="text-decoration: none;color: white;" target="_blank">
+                <button pButton type="button" label="View Album" ></button>
+            </a>
+        </p-card>
+        </div>
+</section>

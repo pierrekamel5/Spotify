@@ -1,0 +1,36 @@
+
+.LoginButton {
+    border:1px solid rgb(92, 92, 92);
+    background-color: rgb(92, 92, 92);
+    color: white;
+    border-radius: 5%;
+    width: 18rem;
+    height: 3rem;
+    position: fixed;
+    top: 65%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.05);
+    letter-spacing: 1px;
+    font-family: 'Lato', sans-serif
+}
+
+.LoginButton:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+.ShopifyLogo{
+    width: 40px;
+    height: 40px;
+    border: 3px solid transparent;
+    position: absolute;
+
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transition: all .35s;
+}
+
