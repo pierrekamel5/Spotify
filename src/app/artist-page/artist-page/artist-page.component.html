@@ -1,29 +1,20 @@
 <section>
-    <ul>
+    <!-- <ul>
         <li style="float: right;"> 
             <input type="text" class="ArtistSearch" (keyup)="searchArtist($event)" 
             placeholder="Search for an artist &#xF002;">
         
         </li>
-    </ul>
-    <div style="background-color: rgb(223, 223, 223);" >
-       
-    <p-card class="card"    header="{{artist.name}}"
-     *ngFor="let artist of artists"  [routerLink]="[artist.id]"> 
+    </ul> -->
+    <app-navbar (keyword)="searchArtist($event)" [showSearchBar]=true></app-navbar>
+    <div style="background-color: rgb(223, 223, 223);padding: 1em;" >
+        
+        <app-customcard *ngFor="let artist of artists"
+                        [itemId]="artist.id" 
+                        [itemName]="artist.name"  
+                        [itemImage]="artist.images[0] != undefined ? artist.images[0].url : undefined"
+                        [itemFollowers]="artist.followers.total">
+        </app-customcard>
     
-        <ng-template pTemplate="header">
-    
-            <img alt="Card" style="height: 22rem !important;"   [src]="[artist.images[0].url]" 
-            *ngIf="artist.images.length > 0" >
-    
-            <img style="height: 22rem !important;" src="assets/images/Image-Not-Available.png" 
-            *ngIf="artist.images.length == 0">
-    
-        </ng-template>
-    
-        <p style="font-weight: bolder;">{{artist.followers.total}} Followers</p>
-    
-        <p-rating [ngModel]="artist.popularity | ratingStars" readonly="true" [cancel]="false"></p-rating>
-    </p-card>
     </div>
 </section>

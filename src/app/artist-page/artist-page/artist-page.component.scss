@@ -2,63 +2,18 @@ html, :root, body {
   background-color: rgb(223, 223, 223);
   background-image: none;
 }
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0.6rem;
-    overflow: hidden;
-    background-color: #333;
-  }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0.6rem;
+  overflow: hidden;
+  background-color: #333;
+}
+li {
+  float: left;
+}
+
   
-
-  .ArtistSearch {
-    font-family: "FontAwesome";
-    height: 2.5rem;
-    width: 18rem;
-    display: block;
-   margin: auto;
-  }
-  .ArtistSearch::placeholder{
-      letter-spacing: 2px;
-      font-size: 1rem;
-      text-align: center;
-     
-  }
-  .p-card-title {
-    height:6rem !important;
-    font-size: 1.5rem !important;
-  }
-
-  .card:hover{
-    cursor: pointer;
-    opacity: 0.7;
-  }
- 
-  .p-card {
-    display:inline-block ;
-   margin:1rem;
-    height: 2.5em !important;
-    width: 18rem;
-  }
-
- 
-@media only screen and (max-width: 600px) {  .p-card {
-  width: 100%;
-  margin:10px;
- }
-}
-@media only screen and (min-width: 600px) {  .p-card {
-  width: 40%;
- }
-}
-@media only screen and (min-width: 670px) {  .p-card {
-  width: 45%;
- }
-}
-@media only screen and (min-width:1010px) {  .p-card {
-  width: 30%;
- }
-}
 
  
  

@@ -29,13 +29,7 @@ artistAlbum: any[];
     this.proxy.get( `${api}artists/${this.artistId}/albums?offset=0&limit=20&include_groups=album,single,compilation,appears_on` )
               .subscribe(result => {
                           this.artistAlbum = result.items;
-                          console.log(result.items);
+                          console.log(result);
                         })
 }
-  goToArtistAlbum(e){
-    this.router.navigateByUrl(e)
-  }
-  back() {
-    this.location.back();
-  }
 }

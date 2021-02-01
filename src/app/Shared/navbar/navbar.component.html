@@ -1,0 +1,12 @@
+<ul>
+    <li  *ngIf="!showSearchBar"> 
+        <button pButton type="button" label="Back" icon="pi pi-arrow-left" 
+            class="p-button-secondary"  (click)="back()"   ></button>     
+    </li>   
+    <li style="float: right;" *ngIf="showSearchBar"> 
+        <input type="text" class="ArtistSearch"  (keyup)="searchKeyword($event)" 
+        placeholder="Search for an artist &#xF002;">
+    
+    </li>
+
+</ul>

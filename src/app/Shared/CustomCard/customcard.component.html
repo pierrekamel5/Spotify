@@ -1,0 +1,18 @@
+<p-card class="card"    header={{itemName}} [routerLink]="[itemId]"> 
+
+   <ng-template pTemplate="header">
+
+       <img alt="Card" style="height: 22rem !important;"   src={{itemImage}}
+       *ngIf="itemImage != undefined" >
+
+       <img style="height: 22rem !important;" src="../../../assets/images/Image-Not-Available.png" 
+       *ngIf="itemImage == undefined">
+
+   </ng-template>
+
+   <p *ngIf="addFollowers" style="font-weight: bolder;">{{itemFollowers}} Followers</p>
+
+   <p-rating *ngIf="addRating" [ngModel]="itemRating | ratingStars" readonly="true" [cancel]="false"></p-rating>
+
+   
+</p-card>

@@ -32,9 +32,8 @@ export class ArtistPageComponent implements OnInit {
    }
 
   searchArtist(event: any){
-
-    if(event.target.value != ''){
-      this.proxy.get(`${api}search?query=${event.target.value}&type=artist&offset=0&limit=20` )
+    if(event != ''){
+      this.proxy.get(`${api}search?query=${event}&type=artist&offset=0&limit=20` )
                 .subscribe(res => this.artists =  res.artists.items);
     } else {
       this.artists = this.clonedArtists;

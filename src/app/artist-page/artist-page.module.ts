@@ -1,3 +1,5 @@
+import { NavbarComponent } from './../Shared/navbar/navbar.component';
+import { CustomcardComponent } from './../Shared/CustomCard/customcard.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +13,7 @@ import { RatingStarsPipe } from '../pipe/rating-stars.pipe';
 import {ButtonModule} from 'primeng/button';
 @NgModule({
   declarations: [ArtistPageComponent, ArtistAlbumsPageComponent,
-    RatingStarsPipe],
+    RatingStarsPipe, CustomcardComponent, NavbarComponent],
   imports: [
     CommonModule,
     ArtistPageRoutingModule,

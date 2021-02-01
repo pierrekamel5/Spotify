@@ -5,8 +5,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { ArtistAlbumsPageComponent } from './artist-albums-page/artist-albums-page.component';
 
 const routes: Routes = [
-  {path: '', component: ArtistPageComponent},
-  {path: ':id', component: ArtistAlbumsPageComponent}
+    {path: '', component: ArtistPageComponent},
+    {path: ':id', component: ArtistAlbumsPageComponent}
+ 
 ];
 
 @NgModule({
