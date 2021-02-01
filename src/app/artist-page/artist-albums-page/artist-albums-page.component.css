@@ -14,7 +14,3 @@ ul {
 li {
   float: left;
 }
-.card:hover{
-  cursor: pointer;
-  opacity:1;
-}

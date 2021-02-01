@@ -6,14 +6,15 @@ import { api } from 'src/app/services/proxy.service'
 @Component({
   selector: 'app-artist-albums-page',
   templateUrl: './artist-albums-page.component.html',
-  styleUrls: ['./artist-albums-page.component.css']
+  styleUrls: ['./artist-albums-page.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class ArtistAlbumsPageComponent implements OnInit {
-ArtistId;
-ArtistAlbum: any[];
+artistId;
+artistAlbum: any[];
 
   constructor(private proxy: ProxyService,private actRoute: ActivatedRoute,private location: Location,private router: Router) {
-    this.ArtistId = this.actRoute.snapshot.params.id;
+    this.artistId = this.actRoute.snapshot.params.id;
    }
 
   ngOnInit(): void {
@@ -21,16 +22,19 @@ ArtistAlbum: any[];
       localStorage.clear();
       this.router.navigate(['/'])
     };
-    this.GetArtistAlbums();
+    this.getArtistAlbums();
   }
 
-  GetArtistAlbums(){  
-    this.proxy.get( `${api}artists/${this.ArtistId}/albums?offset=0&limit=20&include_groups=album,single,compilation,appears_on` )
+  getArtistAlbums(){  
+    this.proxy.get( `${api}artists/${this.artistId}/albums?offset=0&limit=20&include_groups=album,single,compilation,appears_on` )
               .subscribe(result => {
-                          this.ArtistAlbum = result.items;
+                          this.artistAlbum = result.items;
+                          console.log(result.items);
                         })
 }
-
+  goToArtistAlbum(e){
+    this.router.navigateByUrl(e)
+  }
   back() {
     this.location.back();
   }

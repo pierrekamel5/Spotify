@@ -1,7 +1,7 @@
 <section>
     <ul>
         <li style="float: right;"> 
-            <input type="text" class="ArtistSearch" (keyup)="SearchArtist($event)" 
+            <input type="text" class="ArtistSearch" (keyup)="searchArtist($event)" 
             placeholder="Search for an artist &#xF002;">
         
         </li>
@@ -9,7 +9,7 @@
     <div style="background-color: rgb(223, 223, 223);padding: 1rem;" >
        
     <p-card class="card"    header="{{artist.name}}" [style]="{'width': '25rem','heigth':'3rem !important' ,'margin-bottom': '2em','display': 'inline-block','margin-left':'2em'}"
-     *ngFor="let artist of Artists"  [routerLink]="[artist.id]"> 
+     *ngFor="let artist of artists"  [routerLink]="[artist.id]"> 
     
         <ng-template pTemplate="header">
     

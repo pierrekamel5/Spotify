@@ -7,7 +7,7 @@ import { env } from 'process';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css']
+  styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
   env = environment;
@@ -24,7 +24,7 @@ export class LoginPageComponent implements OnInit {
       this.router.navigate(['/artists']);
     }
   }
- Login(){
+ login(){
   
   window.location.assign(this.url + "?client_id="+this.client_id+"&redirect_uri="+this.redirect_uri+"&response_type="+this.response_type);
 }

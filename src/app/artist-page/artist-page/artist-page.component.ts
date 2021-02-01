@@ -5,13 +5,13 @@ import { api } from 'src/app/services/proxy.service'
 @Component({
   selector: 'app-artist-page',
   templateUrl: './artist-page.component.html',
-  styleUrls: ['./artist-page.component.css'],
+  styleUrls: ['./artist-page.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class ArtistPageComponent implements OnInit {
   
-  Artists: any[];
-  ClonedArtists: any[];
+  artists: any[];
+  clonedArtists: any[];
 
   constructor(private proxy: ProxyService,private router: Router) {}
 
@@ -20,24 +20,24 @@ export class ArtistPageComponent implements OnInit {
       localStorage.clear();
       this.router.navigate(['/'])
     };
-  this.GetArtists();
+  this.getArtists();
 
   }
-  GetArtists(){
+  getArtists(){
     this.proxy.get( `${api}search?query=Nirvana&type=artist&offset=0&limit=20`)
               .subscribe(result => {
-                this.Artists = result.artists.items;
-                this.ClonedArtists = result.artists.items;
+                this.artists = result.artists.items;
+                this.clonedArtists = result.artists.items;
               })
    }
 
-  SearchArtist(event: any){
+  searchArtist(event: any){
 
     if(event.target.value != ''){
       this.proxy.get(`${api}search?query=${event.target.value}&type=artist&offset=0&limit=20` )
-                .subscribe(res => this.Artists =  res.artists.items);
+                .subscribe(res => this.artists =  res.artists.items);
     } else {
-      this.Artists = this.ClonedArtists;
+      this.artists = this.clonedArtists;
     }     
   }
 }

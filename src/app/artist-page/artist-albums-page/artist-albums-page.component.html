@@ -11,7 +11,7 @@
    
         <p-card class="card"    header="{{artistAlbum.name}}"
          [style]="{'width': '25rem','heigth':'3rem ' ,'margin-bottom': '2em','display': 'inline-block','margin-left':'2em'}"
-        *ngFor="let artistAlbum of ArtistAlbum"  > 
+        *ngFor="let artistAlbum of artistAlbum"  > 
             <ng-template pTemplate="header">
                 <img alt="Card" style="height: 22rem !important;"   [src]="[artistAlbum.images[0].url]" *ngIf="artistAlbum.images.length > 0" >
                 <img style="height: 22rem !important;" src="assets/images/Image-Not-Available.png" *ngIf="artistAlbum.images.length == 0">
