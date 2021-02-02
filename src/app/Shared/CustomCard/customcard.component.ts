@@ -3,7 +3,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-customcard',
   templateUrl: './customcard.component.html',
-  styleUrls: ['./customcard.component.css'],
+  styleUrls: ['./customcard.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class CustomcardComponent  {
